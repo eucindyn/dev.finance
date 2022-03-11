@@ -1,2 +1,2 @@
 # dev.finance
- Meu primeiro projeto feito com HTML, CSS e JavaScript
+ Meu primeiro projeto feito com HTML, CSS e JavaScript.
