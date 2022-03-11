@@ -1,0 +1,279 @@
+:root {
+  /* é um seletor que vai referenciar a raiz do html, no caso a tag <html> */
+  --dark-blue: #363f5f;
+  --green: #49AA26;
+  --light-green: #3dd705;
+  --red: #e92929;
+  /* esse é um nome de variável */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* tamanho da caixa: começa a contar o tamanho a partir da borda */
+}
+
+html {
+  font-size: 93.75%; /* 15px */
+}
+
+body {
+  background-color: #f0f2f5;
+  font-family: "Poppins", sans-serif;
+}
+
+.sr-only {
+  position: absolute; /* vai colocar uma caixa na frente da outra */
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+} /* fazendo essas configurações o nome vai ficar invisível na tela e visível apenas para leitores de tela. */
+
+.container {
+  width: min(90vw, 800px);
+  /* criamos uma função mínima (min), ao colocar dois valores ela vai deixar o de menor valor. */
+  margin: auto;
+  /* quando coloca a margem em automático, a página divide o espaço que está sobrando de um lado e coloca um pouco no outro, para igualar as margens.*/
+}
+
+h2 {
+  margin-top: 3.2rem;
+  margin-bottom: 0.8rem;
+  color: var(--dark-blue);
+  /* var é uma função, onde será passado o nome da variável que está no :root. */
+  font-weight: normal;
+}
+
+a {
+  color: var(--green);
+  text-decoration: none; /* vai tirar o sublinhado do link */
+}
+
+a:hover {
+  color: var(--light-green);
+}
+
+button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  color: white;
+  background-color: var(--green);
+  padding: 0;
+  border-radius: 0.25rem;
+  cursor: pointer; /* transforma o cursor em uma mãozinha quando está no botão. */
+}
+
+button:hover {
+  background-color: var(--light-green);
+}
+
+.button.new {
+  display: inline-block;
+  margin-bottom: .8rem;
+  /* a mãozinha vai ficar somente dentro do link */
+}
+
+.button.cancel {
+  color: var(--red);
+  border: 2px var(--red) solid;
+  border-radius: 00.25rem;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+}
+
+.button.cancel:hover {
+  opacity: 1;
+}
+
+header {
+  background-color: #2d4a22;
+  padding: 5rem 0 12rem;
+  text-align: center;
+}
+
+#logo {
+  color: #fff;
+  font-weight: 100;
+}
+
+#balance {
+  margin-top: -8rem;
+}
+
+#balance h2 {
+  color: white;
+  margin-top: 0;
+}
+
+.card {
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
+  color: var(--dark-blue);
+}
+
+.card h3 {
+  font-size: 1rem;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card p {
+  font-size: 2rem;
+  line-height: 3rem; /* separação de uma linha para outra */
+  margin-top: 1rem;
+}
+
+.card.total {
+  /* procurando um elemento que tenha duas classes */
+  background-color: var(--green);
+  color: white;
+}
+
+#transaction {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+#data-table {
+  width: 100%; /* vai pegar 100% do espaço/caixa que ele está */
+  border-spacing: 0 0.5rem;
+  color: #969cb3;
+}
+
+table thead tr th:first-child, /* vai pegar o primeiro filho do th */
+table tbody tr td:first-child {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+table thead tr th:last-child,
+table tbody tr td:last-child {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+table thead th {
+  background-color: white;
+  font-weight: normal;
+  padding: 1rem 2rem;
+  text-align: left;
+}
+
+table tbody tr {
+  opacity: 0.7;
+}
+
+table tbody tr:hover {
+  opacity: 1;
+}
+
+table tbody td {
+  background-color: white;
+  padding: 1rem 2rem;
+}
+
+td.description {
+  color: var(--dark-blue);
+}
+
+td.income {
+  color: #12a454;
+}
+
+td.expense {
+  color: #e92929;
+}
+
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;/*vai fixar na tela, mesmo que ela se mexa o modal não se move. */
+  top: 0; /* usando esse vai amplicar o tamanho do modal ficando uma camada preta transparent em toda a tela. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background-color: #f0f2f5;
+  padding: 2.4rem;
+  position: relative;
+  z-index: 1;
+}
+
+#form {
+  max-width: 500px;
+}
+
+#form h2 {
+  margin-top: 0;
+}
+
+input {
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.8rem;
+  width: 100%;
+} 
+
+
+.input-group {
+  margin-top: 0.8rem;  
+}
+
+.input-group .help {
+  opacity: 0.4;
+}
+
+.input-group.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-group.actions .button,
+.input-group.actions button {
+  width: 48%;
+}
+
+footer {
+  text-align: center;
+  padding: 4rem 0 2rem;
+  color: var(--dark-blue);
+  opacity: 0.6;
+}
+
+/* Responsive =================================================== */
+@media (min-width: 800px) { /* quando o width mínimo for de 800px, vai acrescentar essa sequencia de css dentro das chaves. */
+
+  html {
+    font-size: 87.5%; /* 14px */
+  }
+
+  #balance {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
