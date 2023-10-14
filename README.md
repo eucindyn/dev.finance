@@ -9,5 +9,5 @@ O dev.finance é uma aplicação de controle financeiro, onde é possível cadas
 
 ---
 
-Made with ♥ by Cindy
+Made with 🩷 by Cindy
   
